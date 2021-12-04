@@ -87,6 +87,7 @@ function axiosCSV(url) {
 function getMarketStatus() {
   return axios.get(MARKET_STATUS_URL, {
     transformResponse: function (data) {
+      console.log(data);
       return {
         status: JSON.parse(data).NormalMktStatus
       };
@@ -150,12 +151,12 @@ function getChartDataNew(symbol, time) {
 
   return axios.post(NEW_CHART_DATA_URL,
     `Instrument=FUTSTK&CDSymbol=${symbol}&Segment=CM&Series=EQ&CDExpiryMonth=1&FOExpiryMonth=1&IRFExpiryMonth=&CDIntraExpiryMonth=&FOIntraExpiryMonth=&IRFIntraExpiryMonth=&CDDate1=&CDDate2=&PeriodType=${periodType}&Periodicity=${period}&ct0=g1|1|1&ct1=g2|2|1&ctcount=2&time=${new Date().getTime()}`, {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Host: 'nseindia.com',
-        Referer: 'https://nseindia.com/ChartApp/install/charts/mainpage.jsp'
-      }
-    });
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Host: 'nseindia.com',
+      Referer: 'https://nseindia.com/ChartApp/install/charts/mainpage.jsp'
+    }
+  });
 }
 
 function getIndexChartData(symbol, time) {
