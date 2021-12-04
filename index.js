@@ -18,6 +18,12 @@ app.get("/", (req, res, next) => {
   })
 });
 
+app.get("/status", (req, res, next) => {
+  res.json({
+    "status": "server is up"
+  })
+});
+
 // National Stock Exchange (NSE) APIS
 
 // Get the stock market status (open/closed) - JSON
