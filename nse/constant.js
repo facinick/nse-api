@@ -1,4 +1,4 @@
-exports.MARKET_STATUS_URL = 'https://www1.nseindia.com//emerge/homepage/smeNormalMktStatus.json';
+exports.MARKET_STATUS_URL = 'https://www1.nseindia.com/emerge/homepage/smeNormalMktStatus.json';
 exports.INDICES_WATCH_URL = 'https://www1.nseindia.com/live_market/dynaContent/live_watch/stock_watch/liveIndexWatchData.json';
 exports.SECTORS_LIST = 'https://www1.nseindia.com/homepage/peDetails.json';
 exports.QUOTE_INFO_URL = 'https://www1.nseindia.com/live_market/dynaContent/live_watch/get_quote/ajaxGetQuoteJSON.jsp?series=EQ&symbol=';
