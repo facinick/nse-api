@@ -1,9 +1,12 @@
 var express = require("express");
 var BSEAPI = require('./bse/index');
 var NSEAPI = require('./nse/index');
+var cors = require("cors");
 const PORT = process.env.PORT || 3000;
 
 var app = express();
+
+app.use(cors())
 
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
