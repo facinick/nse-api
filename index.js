@@ -23,8 +23,10 @@ app.get("/", (req, res, next) => {
 // Get the stock market status (open/closed) - JSON
 // Example: http://localhost:3000/get_market_status
 app.get("/get_market_status", (req, res, next) => {
+  console.log(`getting market status...`);
   NSEAPI.getMarketStatus()
     .then(function (response) {
+      console.log(`here it is market status...`);
       res.json(response.data);
     });
 });

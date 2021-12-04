@@ -9,6 +9,7 @@ var merge = require('lodash/merge');
  * @returns {boolean}
  */
 function getMarketStatus() {
+  console.log(`getting market status 2...`);
   return NSEAPI.getMarketStatus();
 }
 
