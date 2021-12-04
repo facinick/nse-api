@@ -1,9 +1,6 @@
-// var API = require('indian-stock-exchange');
 var express = require("express");
-var API = require('./index');
-
-var BSEAPI = API.BSE;
-var NSEAPI = API.NSE;
+var BSEAPI = require('./bse/index');
+var NSEAPI = require('./nse/index');
 const PORT = process.env.PORT || 3000;
 
 var app = express();
@@ -14,13 +11,7 @@ app.listen(PORT, () => {
 
 app.get("/", (req, res, next) => {
   res.json({
-    "text": "welcome to stock api"
-  })
-});
-
-app.get("/status", (req, res, next) => {
-  res.json({
-    "status": "server is up"
+    "text": "welcome to nse/bse stock api"
   })
 });
 
