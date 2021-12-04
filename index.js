@@ -9,16 +9,17 @@ const HTTPS_PORT = process.env.HTTPS_PORT || 3001;
 var app = express();
 app.use(cors());
 
-// for https -----------------------------------------
-// var options = {
-//   key: fs.readFileSync('./localhost+2-key.pem'),
-//   cert: fs.readFileSync('./localhost+2.pem')
-// };
-
-// var httpsServer = https.createServer(options, app);
-// httpsServer.listen(HTTPS_PORT);
-
-// ---------------------------------------------------
+app.use(function (req, res, next) {
+  //intercepts OPTIONS method
+  if ('OPTIONS' === req.method) {
+    //respond with 200
+    res.send(200);
+  }
+  else {
+    //move on
+    next();
+  }
+});
 
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
