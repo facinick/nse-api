@@ -1,13 +1,24 @@
 var express = require("express");
 var BSEAPI = require('./bse/index');
+var fs = require('fs');
+var https = require('https');
 var NSEAPI = require('./nse/index');
 var cors = require("cors");
 const PORT = process.env.PORT || 3000;
-
+const HTTPS_PORT = process.env.HTTPS_PORT || 3001;
 var app = express();
-
-// app.use(cors())
 app.use(cors());
+
+// for https -----------------------------------------
+// var options = {
+//   key: fs.readFileSync('./localhost+2-key.pem'),
+//   cert: fs.readFileSync('./localhost+2.pem')
+// };
+
+// var httpsServer = https.createServer(options, app);
+// httpsServer.listen(HTTPS_PORT);
+
+// ---------------------------------------------------
 
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
