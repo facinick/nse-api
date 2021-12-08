@@ -1,3 +1,4 @@
+var axios = require('axios');
 var express = require("express");
 var BSEAPI = require('./bse/index');
 var fs = require('fs');
@@ -8,6 +9,11 @@ const PORT = process.env.PORT || 3000;
 const HTTPS_PORT = process.env.HTTPS_PORT || 3001;
 var app = express();
 app.use(cors());
+
+axios.interceptors.request.use(request => {
+  console.log('Starting Request', JSON.stringify(request, null, 2))
+  return request;
+})
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
