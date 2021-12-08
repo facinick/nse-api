@@ -16,12 +16,12 @@ axios.interceptors.request.use(request => {
 });
 
 axios.defaults.headers = {
-  "Host": "www1.nseindia.com",
-  "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-  "Accept-Encoding": "gzip, deflate, br",
-  "Accept-Language": "en-IN,en-GB;q=0.9,en;q=0.8,en-US;q=0.7",
-  "Connection": "keep-alive",
-  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43",
+  "host": "www1.nseindia.com",
+  "accept": "*/*",
+  "accept-encoding": "gzip, deflate, br",
+  "connection": "keep-alive",
+  "user-agent": "PostmanRuntime/7.28.4",
+  "cache-control": "max-age=0",
 }
 
 app.use(function (req, res, next) {
