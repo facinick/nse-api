@@ -1,6 +1,4 @@
 var NSEAPI = require('./service/API');
-var merge = require('lodash/merge');
-
 
 /**
  * Returns market status
