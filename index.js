@@ -13,9 +13,9 @@ app.use(cors());
 axios.interceptors.request.use(request => {
   console.log('Starting Request', JSON.stringify(request, null, 2))
   return request;
-})
+});
 
-axios.defaults.headers.common = {
+axios.defaults.headers = {
   "Host": "www1.nseindia.com",
   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
   "Accept-Encoding": "gzip, deflate, br",
