@@ -49,6 +49,13 @@ app.get("/get_market_status", (req, res, next) => {
     });
 });
 
+app.get("/get_cat_fact", (req, res, next) => {
+  NSEAPI.getCatFact()
+    .then(function (response) {
+      res.json(response.data);
+    });
+});
+
 // Get the NSE indexes information (last updated, name, previous close, open, low, high, last, percent change, year high and low, index order) - JSON
 // Example: http://localhost:3000/nse/get_indices
 app.get("/nse/get_indices", (req, res, next) => {

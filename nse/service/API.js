@@ -20,6 +20,7 @@ var YEAR_LOW_URL = require('../constant').YEAR_LOW_URL;
 var TOP_VALUE_URL = require('../constant').TOP_VALUE_URL;
 var TOP_VOLUME_URL = require('../constant').TOP_VOLUME_URL;
 var NEW_CHART_DATA_URL = require('../constant').NEW_CHART_DATA_URL;
+var CAT_FACT = require('../constant').CAT_FACT;
 
 function getTime(periodType, time) {
   if (periodType === 1) {
@@ -87,6 +88,18 @@ function axiosCSV(url) {
 function getMarketStatus() {
   console.log(`getting market status 3...`);
   return axios.get(MARKET_STATUS_URL, {
+    transformResponse: function (data) {
+      console.log(data);
+      return {
+        status: JSON.parse(data).NormalMktStatus
+      };
+    }
+  });
+}
+
+function getCatFact() {
+  console.log(`getting cat fact`);
+  return axios.get(CAT_FACT, {
     transformResponse: function (data) {
       console.log(data);
       return {
@@ -256,6 +269,7 @@ function getTopVolumeStocks() {
 
 var NSEAPI = {
   getMarketStatus: getMarketStatus,
+  getCatFact: getCatFact,
   getIndices: getIndices,
   getSectorsList: getSectorsList,
   getQuotes: getQuotes,

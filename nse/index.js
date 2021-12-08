@@ -11,6 +11,16 @@ function getMarketStatus() {
   return NSEAPI.getMarketStatus();
 }
 
+/**
+ * Returns market status
+ * true => market Close
+ * false => market Open
+ * @returns {boolean}
+ */
+function getCatFact() {
+  return NSEAPI.getCatFact();
+}
+
 
 /**
  * API returning indices list
@@ -156,6 +166,7 @@ function getTopVolumeStocks() {
 
 var nse = {
   getMarketStatus: getMarketStatus,
+  getCatFact: getCatFact,
   getIndices: getIndices,
   getSectorsList: getSectorsList,
   getQuotes: getQuotes,
