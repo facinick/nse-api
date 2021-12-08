@@ -19,24 +19,19 @@ axios.defaults.headers = {
   "host": "www1.nseindia.com",
   // "accept": "*/*",
   "accept-encoding": "gzip, deflate, br",
-  // "connection": "keep-alive",
-  // "user-agent": "PostmanRuntime/7.28.4",
-  // "cache-control": "max-age=0",
-
   'Connection': 'keep-alive',
   'Cache-Control': 'max-age=0',
   'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Microsoft Edge";v="96"',
   'sec-ch-ua-mobile': '?0',
   'sec-ch-ua-platform': '"macOS"',
   'Upgrade-Insecure-Requests': '1',
-  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43',
+  'User-Agent': 'PostmanRuntime/7.28.4',
   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
   'Sec-Fetch-Site': 'none',
   'Sec-Fetch-Mode': 'navigate',
   'Sec-Fetch-User': '?1',
   'Sec-Fetch-Dest': 'document',
   'Accept-Language': 'en-IN,en-GB;q=0.9,en;q=0.8,en-US;q=0.7',
-
 }
 
 app.use(function (req, res, next) {
