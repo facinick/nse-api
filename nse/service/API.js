@@ -130,19 +130,15 @@ function getQuotes(symbol) {
 
 function getIndexOptionsChain(symbol) {
 
-  console.log(`making a call to ${INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol)}`);
-
-
   axios.get(INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol),
     {
       headers: {
-        Referer: "https://nseindia.com/ChartApp/install/charts/mainpage.jsp",
+        Referer: "https://nseindia.com",
         'X-Requested-With': 'XMLHttpRequest',
         Host: "nseindia.com",
         "Accept-Encoding": "gzip, deflate, br",
         "User-Agent": "PostmanRuntime/7.28.4",
         "Accept": "*/*",
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43"
       }
     }).then(() => {
       console.log("yay");
