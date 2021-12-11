@@ -138,7 +138,10 @@ function getIndexOptionsChain(symbol) {
       headers: {
         Referer: "https://nseindia.com/ChartApp/install/charts/mainpage.jsp",
         'X-Requested-With': 'XMLHttpRequest',
-        host: "nseindia.com",
+        Host: "www.nseindia.com",
+        "Accept-Encoding": "gzip, deflate, br",
+        "User-Agent": "PostmanRuntime/7.28.4",
+        "Accept": "*/*",
       }
     }).then(() => {
       console.log("yay");
