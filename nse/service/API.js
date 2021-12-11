@@ -129,13 +129,22 @@ function getQuotes(symbol) {
 }
 
 function getIndexOptionsChain(symbol) {
-  return axios.get(INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol),
+
+  console.log(`making a call to ${INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol)}`);
+
+
+  axios.get(INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol),
     {
       headers: {
         Referer: INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol),
         'X-Requested-With': 'XMLHttpRequest',
         host: "nseindia.com",
       }
+    }).then(() => {
+      console.log("yay");
+    }).catch(error => {
+      console.log(error);
+      console.log(`grrr`);
     });
 }
 
