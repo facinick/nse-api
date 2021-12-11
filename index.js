@@ -16,7 +16,7 @@ axios.interceptors.request.use(request => {
 });
 
 axios.defaults.headers = {
-  "host": "www1.nseindia.com",
+  "Host": "www1.nseindia.com",
   "accept-encoding": "gzip, deflate, br",
   'Connection': 'keep-alive',
   'Cache-Control': 'max-age=0',
