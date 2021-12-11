@@ -133,7 +133,8 @@ function getIndexOptionsChain(symbol) {
     {
       headers: {
         Referer: INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol),
-        'X-Requested-With': 'XMLHttpRequest'
+        'X-Requested-With': 'XMLHttpRequest',
+        host: "nseindia.com",
       }
     });
 }
