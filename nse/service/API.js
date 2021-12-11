@@ -7,6 +7,7 @@ var INDICES_WATCH_URL = require('../constant').INDICES_WATCH_URL;
 var SECTORS_LIST = require('../constant').SECTORS_LIST;
 var QUOTE_INFO_URL = require('../constant').QUOTE_INFO_URL;
 var GET_QUOTE_URL = require('../constant').GET_QUOTE_URL;
+var INDEX_OPTIONS_CHAIN = require('../constant').INDEX_OPTIONS_CHAIN;
 var GAINERS_URL = require('../constant').GAINERS_URL;
 var LOSERS_URL = require('../constant').LOSERS_URL;
 var ADVANCES_DECLINES_URL = require('../constant').ADVANCES_DECLINES_URL;
@@ -122,6 +123,16 @@ function getQuotes(symbol) {
     {
       headers: {
         Referer: GET_QUOTE_URL + encodeURIComponent(symbol),
+        'X-Requested-With': 'XMLHttpRequest'
+      }
+    });
+}
+
+function getIndexOptionsChain(symbol) {
+  return axios.get(INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol),
+    {
+      headers: {
+        Referer: INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol),
         'X-Requested-With': 'XMLHttpRequest'
       }
     });
@@ -273,6 +284,7 @@ var NSEAPI = {
   getIndices: getIndices,
   getSectorsList: getSectorsList,
   getQuotes: getQuotes,
+  getIndexOptionsChain: getIndexOptionsChain,
   getQuoteInfo: getQuoteInfo,
   getGainers: getGainers,
   getLosers: getLosers,

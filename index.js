@@ -17,7 +17,6 @@ axios.interceptors.request.use(request => {
 
 axios.defaults.headers = {
   "host": "www1.nseindia.com",
-  // "accept": "*/*",
   "accept-encoding": "gzip, deflate, br",
   'Connection': 'keep-alive',
   'Cache-Control': 'max-age=0',
@@ -94,6 +93,15 @@ app.get("/nse/get_indices", (req, res, next) => {
 // Example: http://localhost:3000/nse/get_quotes
 app.get("/nse/get_quotes", (req, res, next) => {
   NSEAPI.getQuotes()
+    .then(function (response) {
+      res.json(response.data);
+    });
+});
+
+// Get the quotes of all indexes in NSE - HTML
+// Example: http://localhost:3000/nse/get_quotes
+app.get("/nse/get_index_options_chain", (req, res, next) => {
+  NSEAPI.getIndexOptionsChain(req.query.symbol)
     .then(function (response) {
       res.json(response.data);
     });

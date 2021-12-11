@@ -2,6 +2,7 @@ exports.MARKET_STATUS_URL = 'https://www1.nseindia.com/emerge/homepage/smeNormal
 exports.CAT_FACT = 'https://catfact.ninja/fact';
 exports.INDICES_WATCH_URL = 'https://www1.nseindia.com/live_market/dynaContent/live_watch/stock_watch/liveIndexWatchData.json';
 exports.SECTORS_LIST = 'https://www1.nseindia.com/homepage/peDetails.json';
+exports.INDEX_OPTIONS_CHAIN = 'https://www.nseindia.com/api/option-chain-indices?symbol=';
 exports.QUOTE_INFO_URL = 'https://www1.nseindia.com/live_market/dynaContent/live_watch/get_quote/ajaxGetQuoteJSON.jsp?series=EQ&symbol=';
 exports.GET_QUOTE_URL = 'https://www1.nseindia.com/live_market/dynaContent/live_watch/get_quote/GetQuote.jsp?symbol=';
 exports.GAINERS_URL = 'https://www1.nseindia.com/live_market/dynaContent/live_analysis/gainers/niftyGainers1.json';

@@ -51,6 +51,10 @@ function getQuotes(symbol) {
   return NSEAPI.getQuotes(symbol);
 }
 
+function getIndexOptionsChain(symbol) {
+  return NSEAPI.getIndexOptionsChain(symbol);
+}
+
 
 /**
  * Get info about a stock
@@ -173,6 +177,7 @@ var nse = {
   getQuoteInfo: getQuoteInfo,
   getGainers: getGainers,
   getLosers: getLosers,
+  getIndexOptionsChain: getIndexOptionsChain,
   getInclineDecline: getInclineDecline,
   getIndexStocks: getIndexStocks,
   getIntraDayData: getIntraDayData,
