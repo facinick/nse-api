@@ -136,7 +136,7 @@ function getIndexOptionsChain(symbol) {
   axios.get(INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol),
     {
       headers: {
-        Referer: INDEX_OPTIONS_CHAIN + encodeURIComponent(symbol),
+        Referer: "https://nseindia.com/ChartApp/install/charts/mainpage.jsp",
         'X-Requested-With': 'XMLHttpRequest',
         host: "nseindia.com",
       }
